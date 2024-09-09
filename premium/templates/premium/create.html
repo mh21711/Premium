@@ -1,0 +1,25 @@
+{% extends 'premium/base.html' %}
+
+{% block title %}
+    انشاء قسط
+{% endblock %}
+
+{% block content %}
+    <h1>انشاء قسط</h1>
+    <form method="post" dir="rtl">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="example" class="form-label">الناس</label>
+            <input type="text" class="form-control" id="example" name="people" required>
+        </div>
+        <div class="mb-3">
+            <label for="example2" class="form-label">السعر</label>
+            <input type="number" class="form-control" id="example2" name="price" required>
+        </div>
+        <div class="mb-3">
+            <label for="example3" class="form-label">المنتج</label>
+            <input type="text" class="form-control" id="example3" name="product" required>
+        </div>
+        <button type="submit" class="btn btn-primary">انشاء قسط</button>
+    </form>
+{% endblock %}

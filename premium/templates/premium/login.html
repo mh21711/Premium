@@ -1,0 +1,25 @@
+{% extends 'premium/base.html' %}
+
+{% block title %}
+    تسجيل الدخول
+{% endblock %}
+
+{% block content %}
+    <h1>تسجيل الدخول</h1>
+    {% if message %}
+      <h4>{{ message }}</h2>
+    {% endif %}
+    <form method="post" dir="rtl">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputusername1" class="form-label">اسم المستخدم</label>
+            <input type="text" class="form-control" id="exampleInputusername1" name="username">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">كلمة المرور</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+        <p>ليس لديك حساب؟ <a href="{% url 'register' %}">انشاء حساب</a></p>
+    </form>
+{% endblock %}
